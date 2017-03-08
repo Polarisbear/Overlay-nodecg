@@ -1,0 +1,13 @@
+{
+  "nodecg": {
+    "dashboardPanels": [
+      {
+        "name": "timer",
+        "title": "Timer",
+        "width": 2,
+        "file": "timer.html",
+        "headerColor": "#9f9bbd"
+      }
+    ]
+  }
+}

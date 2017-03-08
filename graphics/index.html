@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="index.css" rel="stylesheet">
+	<link rel="stylesheet" href="test.css">
+	<script src="jquery-3.1.1.min.js"></script>
+	<script src="social.js"></script>
+
+</head>
+
+<body>
+
+	<div id="Content">
+		<div class="test" id="popup">
+			<div class="none" id="anim_titre">
+				<div class="triangle"></div>
+				<h1 id="titre">Je suis un titre</h1>
+			</div>
+			<div class="none" id="anim_contenu">
+				<p id="contenu">Et moi le contenu</p>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		(function() {
+			'use strict';
+
+			const contenu = document.getElementById('contenu');
+			const titre = document.getElementById('titre');
+			const popup = document.getElementById('popup');
+			const anim_titre = document.getElementById('anim_titre');
+			const anim_contenu = document.getElementById('anim_contenu');
+
+			const content = nodecg.Replicant('Contenu');
+			const title = nodecg.Replicant('Titre');
+
+			content.on('change', newVal => {
+				contenu.innerText = newVal
+			});
+			title.on('change', newVal => {
+				titre.innerText = newVal
+			});
+
+			nodecg.listenFor('show', function() {
+				anim_contenu.classList.add("contenu");
+				anim_contenu.classList.remove("disappear-contenu");
+				anim_contenu.classList.remove("none");
+				anim_titre.classList.add("titre");
+				anim_titre.classList.remove("disappear-titre");
+				anim_titre.classList.remove("none");
+
+			});
+
+			nodecg.listenFor('hide', function() {
+				anim_contenu.classList.add("disappear-contenu");
+				anim_contenu.classList.remove("contenu");
+				anim_contenu.classList.remove("none");
+				anim_titre.classList.add("disappear-titre");
+				anim_titre.classList.remove("titre");
+				anim_titre.classList.remove("none");
+			});
+
+		})();
+	</script>
+
+</body>
+
+</html>

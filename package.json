@@ -1,0 +1,66 @@
+{
+  "name": "cooldown-overlay",
+  "version": "0.0.0",
+  "description": "Dynamic broadcast graphics rendered in a browser",
+  "homepage": "",
+  "author": {
+    "name": "Polaris",
+    "email": "guillaume.crespin74@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "~0.8.0",
+    "dashboardPanels": [
+      {
+        "name": "panel-message",
+        "title": "Panel Message",
+        "width": 4,
+        "file": "panel-message.html",
+        "headerColor": "#9f9bbd"
+      },
+      {
+        "name": "timer",
+        "title": "Timer",
+        "width": 2,
+        "file": "timer.html",
+        "headerColor": "#9f9bbd"
+      },
+      {
+        "name": "poll",
+        "title": "Poll",
+        "width": 2,
+        "file": "poll.html",
+        "headerColor": "#9f9bbd"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "index.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "timer.html",
+        "width": 1280,
+        "height": 720,
+        "singleInstance": true
+      }
+    ]
+  },
+  "repository": "https://github.com/nodecg/nodecg.git",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "strawpoll": "^1.1.0",
+    "tmi.js": "^1.1.2"
+  }
+}
